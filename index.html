@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Calculadora Científica</title>
+	<link rel="stylesheet" href="/CalcJS Científica/style.css" />
+	<script defer src="/CalcJS Científica/script.js"></script>
+	</head>
+<body>
+	<div id="splash" class="splash">
+		<div class="splash-content">
+			<h1 class="splash-title">CalcJS Científica</h1>
+		</div>
+	</div>
+
+	<header class="app-header" id="appHeader" style="display:none">
+		<div class="header-content">
+			<h1 class="app-title">CalcJS Científica</h1>
+		</div>
+	</header>
+
+	<main class="container" style="display:none" id="mainContent">
+		<section class="calculator">
+			<div class="top-menu">
+				<button id="helpBtn" class="help-btn">?</button>
+			</div>
+			<div class="display">
+				<div id="expr" class="expr">0</div>
+				<div id="result" class="result">0</div>
+			</div>
+
+			<div class="controls">
+				<div class="top-row">
+				<button data-action="mode">Deg</button>
+			</div>
+
+				<div class="keys">
+					<button data-action="clear">C</button>
+					<button data-action="back">⌫</button>
+					<button data-action="percent">%</button>
+					<button data-value="÷">÷</button>
+
+					<button data-value="7">7</button>
+					<button data-value="8">8</button>
+					<button data-value="9">9</button>
+					<button data-value="×">×</button>
+
+					<button data-value="4">4</button>
+					<button data-value="5">5</button>
+					<button data-value="6">6</button>
+					<button data-value="−">−</button>
+
+					<button data-value="1">1</button>
+					<button data-value="2">2</button>
+					<button data-value="3">3</button>
+					<button data-value="+">+</button>
+
+					<button data-value="0">0</button>
+					<button data-value=".">.</button>
+					<button data-action="neg">+/-</button>
+					<button data-action="equals" class="equals">=</button>
+
+					<button data-action="paren">( )</button>
+					<button data-action="pow2">x²</button>
+					<button data-action="pow3">x³</button>
+					<button data-action="pow">xʸ</button>
+
+					<button data-action="sqrt">√x</button>
+					<button data-action="cbrt">∛x</button>
+					<button data-action="root">n√x</button>
+					<button data-action="inv">1/x</button>
+
+					<button data-action="sin">sin</button>
+					<button data-action="cos">cos</button>
+					<button data-action="tan">tan</button>
+					<button data-action="asin">sin⁻¹</button>
+
+					<button data-action="acos">cos⁻¹</button>
+					<button data-action="atan">tan⁻¹</button>
+					<button data-action="ln">ln</button>
+					<button data-action="log">log</button>
+
+					<button data-action="exp">eˣ</button>
+					<button data-action="tenpow">10ˣ</button>
+					<button data-action="abs">|x|</button>
+					<button data-action="fact">n!</button>
+
+					<button data-action="pi">π</button>
+					<button data-action="e">e</button>
+					<button data-action="sumstats">Estat</button>
+					<button data-action="conv">Conv</button>
+				</div>
+			</div>
+		</section>
+
+		<aside class="explain">
+			<h2>Desenvolvimento da Operação</h2>
+			<div id="explanation" class="explanation">Insira uma expressão e pressione = para ver o passo a passo.</div>
+			<div class="extras">
+				<label>Lista (vírgula): <input id="statsInput" placeholder="Ex: 1,2,3,4" /></label>
+				<div class="stat-buttons">
+					<button id="meanBtn">Média</button>
+					<button id="sumBtn">Soma</button>
+					<button id="varBtn">Variância</button>
+					<button id="stdBtn">Desvio</button>
+				</div>
+				<div class="conv-buttons">
+					<button id="toBin">Bin</button>
+					<button id="toOct">Oct</button>
+					<button id="toHex">Hex</button>
+					<button id="toDec">Dec</button>
+				</div>
+			</div>
+		</aside>
+	</main>
+
+	<div id="helpModal" class="modal hidden">
+		<div class="modal-content">
+			<button id="closeHelp" class="close-btn">×</button>
+			<h2>Guia de Operações</h2>
+			<div class="help-grid">
+				<div class="help-item"><strong>Adição (+)</strong><p>Soma dois números. Ex: 5 + 3 = 8</p></div>
+				<div class="help-item"><strong>Subtração (−)</strong><p>Subtrai dois números. Ex: 10 − 4 = 6</p></div>
+				<div class="help-item"><strong>Multiplicação (×)</strong><p>Multiplica dois números. Ex: 6 × 7 = 42</p></div>
+				<div class="help-item"><strong>Divisão (÷)</strong><p>Divide dois números. Ex: 20 ÷ 4 = 5</p></div>
+				<div class="help-item"><strong>Porcentagem (%)</strong><p>Calcula porcentagem. Ex: 50 / 100 = 0.5 (50%)</p></div>
+				<div class="help-item"><strong>Parênteses ( )</strong><p>Agrupa operações. Ex: (2 + 3) × 4 = 20</p></div>
+				<div class="help-item"><strong>Potência (x²)</strong><p>Eleva ao quadrado. Ex: 5² = 25</p></div>
+				<div class="help-item"><strong>Potência (x³)</strong><p>Eleva ao cubo. Ex: 3³ = 27</p></div>
+				<div class="help-item"><strong>Potência (xʸ)</strong><p>Eleva a qualquer potência. Ex: 2 ** 10 = 1024</p></div>
+				<div class="help-item"><strong>Raiz Quadrada (√x)</strong><p>Calcula raiz quadrada. Ex: √16 = 4</p></div>
+				<div class="help-item"><strong>Raiz Cúbica (∛x)</strong><p>Calcula raiz cúbica. Ex: ∛27 = 3</p></div>
+				<div class="help-item"><strong>Raiz N-ésima (n√x)</strong><p>Calcula qualquer raiz. Ex: root(3, 8) = 2</p></div>
+				<div class="help-item"><strong>Seno (sin)</strong><p>Calcula seno de um ângulo. Use em graus ou radianos (Deg/Rad)</p></div>
+				<div class="help-item"><strong>Cosseno (cos)</strong><p>Calcula cosseno de um ângulo. Use em graus ou radianos (Deg/Rad)</p></div>
+				<div class="help-item"><strong>Tangente (tan)</strong><p>Calcula tangente de um ângulo. Use em graus ou radianos (Deg/Rad)</p></div>
+				<div class="help-item"><strong>Arco Seno (sin⁻¹)</strong><p>Calcula ângulo cujo seno é dado. Ex: sin⁻¹(0.5) = 30 graus</p></div>
+				<div class="help-item"><strong>Arco Cosseno (cos⁻¹)</strong><p>Calcula ângulo cujo cosseno é dado. Ex: cos⁻¹(0.5) = 60 graus</p></div>
+				<div class="help-item"><strong>Arco Tangente (tan⁻¹)</strong><p>Calcula ângulo cuja tangente é dado.</p></div>
+				<div class="help-item"><strong>Logaritmo Natural (ln)</strong><p>Calcula log base e. Ex: ln(2.718) ≈ 1</p></div>
+				<div class="help-item"><strong>Logaritmo Decimal (log)</strong><p>Calcula log base 10. Ex: log(100) = 2</p></div>
+				<div class="help-item"><strong>Exponencial (eˣ)</strong><p>Calcula e elevado a x. Ex: eˣ onde x=1 ≈ 2.718</p></div>
+				<div class="help-item"><strong>10ˣ</strong><p>Calcula 10 elevado a x. Ex: 10²= 100</p></div>
+				<div class="help-item"><strong>Valor Absoluto (|x|)</strong><p>Remove o sinal, deixa sempre positivo. Ex: |−5| = 5</p></div>
+				<div class="help-item"><strong>Inverso (1/x)</strong><p>Calcula recíproco. Ex: 1/2 = 0.5</p></div>
+				<div class="help-item"><strong>Fatorial (n!)</strong><p>Multiplica todos inteiros até n. Ex: 5! = 120</p></div>
+				<div class="help-item"><strong>Mudança de Sinal (+/-)</strong><p>Inverte o sinal do número. Ex: 5 → −5</p></div>
+				<div class="help-item"><strong>Constante π</strong><p>Insere pi (3.14159...). Ex: π × r²</p></div>
+				<div class="help-item"><strong>Constante e</strong><p>Insere e (2.71828...). Base de logaritmos naturais.</p></div>
+				<div class="help-item"><strong>Média</strong><p>Calcula média de lista. Ex: 1,2,3,4 → Média = 2.5</p></div>
+				<div class="help-item"><strong>Soma</strong><p>Soma todos os números da lista. Ex: 1,2,3 → Soma = 6</p></div>
+				<div class="help-item"><strong>Variância</strong><p>Mede dispersão dos dados. Insira lista separada por vírgulas.</p></div>
+				<div class="help-item"><strong>Desvio Padrão</strong><p>Mede variação. Raiz quadrada da variância.</p></div>
+				<div class="help-item"><strong>Binário (Bin)</strong><p>Converte para base 2. Ex: 10 (decimal) = 1010 (bin)</p></div>
+				<div class="help-item"><strong>Octal (Oct)</strong><p>Converte para base 8. Ex: 10 (decimal) = 12 (oct)</p></div>
+				<div class="help-item"><strong>Hexadecimal (Hex)</strong><p>Converte para base 16. Ex: 255 (decimal) = FF (hex)</p></div>
+				<div class="help-item"><strong>Decimal (Dec)</strong><p>Mostra resultado em decimal (base 10).</p></div>
+				<div class="help-item"><strong>Memória (MC/MR/M+/M−)</strong><p>MC: Limpa memória | MR: Recupera | M+: Soma | M−: Subtrai</p></div>
+				<div class="help-item"><strong>Modo Deg/Rad</strong><p>Alterna entre graus e radianos para funções trigonométricas.</p></div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
+
