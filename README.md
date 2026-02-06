@@ -2,17 +2,20 @@
 
 ![Status](https://img.shields.io/badge/status-Em%20Desenvolvimento-blue)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow)
-![Node.js](https://img.shields.io/badge/Node.js-18.x-brightgreen)
+![HTML5](https://img.shields.io/badge/HTML5-Estrutura-orange)
+![CSS3](https://img.shields.io/badge/CSS3-Estilo-blue)
 ![VS Code](https://img.shields.io/badge/VS%20Code-Editor-blue)
 ![TCC](https://img.shields.io/badge/Projeto-TCC-purple)
 ![Contribuidores](https://img.shields.io/badge/Contribuidores-2-lightgrey)
 
+---
+
 ## 📌 Sobre o Projeto
-Este projeto tem como objetivo aperfeiçoar nossos conhecimentos em lógica de programação, operadores e manipulação de dados, utilizando **JavaScript** e **Node.js**.
+Este projeto tem como objetivo aperfeiçoar nossos conhecimentos em lógica de programação, operadores e manipulação de dados, utilizando **JavaScript**, juntamente com **HTML** e **CSS** para a construção da interface.
 
-Desenvolvemos uma **calculadora científica completa**, capaz de realizar desde operações aritméticas básicas até cálculos avançados de trigonometria, estatística e engenharia.
+Foi desenvolvida uma **calculadora científica completa**, executada diretamente no navegador, capaz de realizar desde operações aritméticas básicas até cálculos avançados de trigonometria, estatística e engenharia.
 
-Além de executar as operações, a calculadora também **mostra o passo a passo da resolução** das contas de forma simplificada, ajudando no entendimento do processo.
+Além de executar as operações, a calculadora também **mostra o passo a passo da resolução** das contas de forma simplificada, auxiliando no entendimento do processo matemático.
 
 ---
 
@@ -21,7 +24,7 @@ Além de executar as operações, a calculadora também **mostra o passo a passo
 - **Eduardo**
 
 Turma: *Programação Web – Turno Tarde*  
-Todas as tarefas foram divididas de forma equilibrada entre os dois integrantes.
+As tarefas foram divididas de forma equilibrada entre os dois integrantes.
 
 ---
 
@@ -55,8 +58,8 @@ Todas as tarefas foram divididas de forma equilibrada entre os dois integrantes.
 - Cosseno  
 - Tangente  
 - Funções inversas (arc)  
-- Hiperbólicas  
-- Hiperbólicas inversas  
+- Funções hiperbólicas  
+- Funções hiperbólicas inversas  
 - Conversão de unidades (graus ↔ radianos)
 
 ### ➤ Funções Estatísticas
@@ -76,18 +79,19 @@ Todas as tarefas foram divididas de forma equilibrada entre os dois integrantes.
 
 ### ➤ Funções de Engenharia e Notação
 - Notação científica (EXP)  
-- Arredondamentos e casas decimais  
+- Arredondamentos e controle de casas decimais  
 - Conversões de unidades  
 - Operações binárias e hexadecimais  
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
-- **JavaScript**
-- **Node.js**
+- **HTML5**
+- **CSS3**
+- **JavaScript (ES6+)**
 - **Visual Studio Code**
 
-JavaScript foi escolhido por ser a linguagem mais trabalhada durante o curso e a que os integrantes mais dominam.
+O **HTML** é responsável pela estrutura da aplicação, o **CSS** pela estilização da interface e o **JavaScript** pela lógica, cálculos e interatividade da calculadora.
 
 ---
 
@@ -112,7 +116,7 @@ JavaScript foi escolhido por ser a linguagem mais trabalhada durante o curso e a
 - `Math.exp()`
 
 ### ✔ Manipulação de Strings
-- `string += valor`  
+- Concatenação de valores  
 - `String()`  
 - `parseFloat()`
 
@@ -123,7 +127,7 @@ JavaScript foi escolhido por ser a linguagem mais trabalhada durante o curso e a
 - `backspace()`
 
 ### ✔ Avaliação de Expressões
-- `eval()` *(usado com cautela)*
+- `eval()` *(utilizado com cautela e validações)*
 
 ### ✔ Conversões de Unidades
 - Graus → Radianos: `x * Math.PI / 180`  
@@ -132,4 +136,4 @@ JavaScript foi escolhido por ser a linguagem mais trabalhada durante o curso e a
 ---
 
 ## 🎯 Objetivo Geral
-Aprimorar habilidades de programação, lógica, manipulação matemática e domínio do JavaScript através da criação de uma calculadora científica completa.
+Aprimorar as habilidades de programação, lógica matemática e domínio do JavaScript por meio do desenvolvimento de uma calculadora científica completa, funcional e intuitiva para uso educacional.
